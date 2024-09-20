@@ -148,12 +148,21 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    let blankQuestion: Question = makeBlankQuestion(id, name, type);
+    const blankQuestion: Question = {
+        id,
+        name,
+        type,
+        options: [], 
+        points: 0,
+        published: false
+        ,
+        body: "",
+        expected: ""
+    };
     
-   
+    
     return [...questions, blankQuestion];
 }
-
 /***
  * Consumes an array of Questions and produces a new array of Questions, where all
  * the Questions are the same EXCEPT for the one with the given `targetId`. That
