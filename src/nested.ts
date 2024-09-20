@@ -148,7 +148,7 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    const blankQuestion = makeBlankQuestion(id, name, type);
+    let blankQuestion: Question = makeBlankQuestion(id, name, type);
     
    
     return [...questions, blankQuestion];
@@ -250,7 +250,7 @@ export function duplicateQuestionInArray(
         
         if (question.id === targetId) {
 
-            const duplicate = duplicateQuestion(newId, question);
+            let duplicate: Question = duplicateQuestion(newId, question);
             result.push(duplicate);
         }
     });
