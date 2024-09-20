@@ -148,10 +148,9 @@ export function addNewQuestion(
     name: string,
     type: QuestionType
 ): Question[] {
-    // Create the blank question using the provided parameters
     const blankQuestion = makeBlankQuestion(id, name, type);
     
-    // Return a new array containing all existing questions plus the new blank question
+   
     return [...questions, blankQuestion];
 }
 

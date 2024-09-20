@@ -39,7 +39,7 @@ export function isValid(question: Question, answer: string): boolean {
     if(question.type === "short_answer_question") {
         return true;
     }
-    else if (question.type === "multiple_choice_question") {
+    else {
         for(let i: number = 0; i < question.options.length; i++) {
             if(answer === question.options[i]) {
                 return true;
@@ -81,7 +81,7 @@ export function toMarkdown(question: Question): string {
 
     str += `# ${question.name}\n${question.body}\n`;
 
-    if (question.type === "multiple_choice_question" && question.options) {
+    if (question.type === "multiple_choice_question" ) {
         for (let i = 0; i < question.options.length; i++) {
             str += `- ${question.options[i]}\n`;
         }
@@ -107,7 +107,7 @@ export function renameQuestion(question: Question, newName: string): Question {
  * published; if it was published, now it should be not published.
  */
 export function publishQuestion(question: Question): Question {
-    if(question.published === true) {
+    if(question.published) {
         return {
             ...question,
             published: false,
@@ -144,7 +144,7 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    const newOptions = [...(question.options || []), newOption];
+    const newOptions = [...(question.options), newOption];
 
     return {
         ...question, 
