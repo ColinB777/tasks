@@ -17,14 +17,14 @@ function App(): React.JSX.Element {
             <Counter></Counter>
             <hr />
             <RevealAnswer></RevealAnswer>
-            <hr />
+             <hr /> 
             <StartAttempt></StartAttempt>
             <hr />
-            <TwoDice></TwoDice>
+            <TwoDice></TwoDice> 
             <hr />
             <ChangeType></ChangeType>
-            <hr />
-            <CycleHoliday></CycleHoliday>
+             <hr />
+            <CycleHoliday></CycleHoliday>  
         </div>
 
 
